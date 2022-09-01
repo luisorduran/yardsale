@@ -12,6 +12,9 @@ burguerMenu.addEventListener("click", toggleMobileMenu);
 carMenu.addEventListener("click", toggleCarMenu);
 
 function toggleDesktopMenu() {
+  if (!aside.classList.contains("inactive")) {
+    aside.classList.add("inactive");
+  }
   desktopMenu.classList.toggle("inactive");
 }
 
@@ -25,6 +28,9 @@ function toggleMobileMenu() {
 function toggleCarMenu() {
   if (!mobileMenu.classList.contains("inactive")) {
     mobileMenu.classList.add("inactive");
+  }
+  if (!desktopMenu.classList.contains("inactive")) {
+    desktopMenu.classList.add("inactive");
   }
   aside.classList.toggle("inactive");
 }
