@@ -37,12 +37,14 @@ function toggleCarMenu() {
 }
 
 const productList = [];
+
 productList.push({
   name: "Computer",
   price: 320,
   image:
     "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 });
+
 productList.push({
   name: "Bike",
   price: 120,
