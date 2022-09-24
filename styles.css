@@ -183,7 +183,7 @@ aside {
   right: 0;
 }
 
-#shoppingCartContainer{
+#shoppingCartContainer {
   padding: 0 24px;
 }
 
@@ -255,7 +255,7 @@ aside {
   height: 50px;
 }
 
-/*Product detail aside*/ 
+/*Product detail aside*/
 .product-detail-close {
   background: var(--white);
   width: 14px;
@@ -360,6 +360,58 @@ aside {
   color: var(--very-light-pink);
 }
 
+/* INI FOOTER */
+.footer {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 300px;
+}
+
+footer section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.left ul,
+.right ul {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  list-style: none;
+}
+
+.left li,
+.right li {
+  margin: 10px 0;
+}
+
+.left a,
+.right a {
+  text-decoration: none;
+}
+
+.f-bottom {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+.footer a {
+  cursor: pointer;
+  font-size: 14px;
+  padding-left: 30px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* FIN FOOTER */
+
 @media (max-width: 640px) {
   .menu {
     display: block;
@@ -382,6 +434,10 @@ aside {
   .product-card img {
     width: 140px;
     height: 140px;
+  }
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
