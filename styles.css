@@ -394,21 +394,29 @@ aside {
   margin: 10px 0;
 }
 
-.left a,
-.right a {
+.left,
+ul li a,
+.right ul li a {
   text-decoration: none;
+  color: var(--hospital-green);
+  font-weight: 500;
 }
-
+.right ul li p {
+  color: var(--very-light-pink);
+  font-weight: 700;
+}
 .f-bottom {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 15px;
   margin: 0 30px 0 30px;
 }
 
 .f-bottom p {
   text-align: center;
+  color: var(--very-light-pink);
 }
+
 .footer a {
   cursor: pointer;
   font-size: 14px;
