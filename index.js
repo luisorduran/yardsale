@@ -67,27 +67,17 @@ function toggleProductDetailAside() {
 function closeProductDetailAside() {
   productDetailContainer.classList.add("inactive");
 }
+
+
 const productList = [];
 
 //Carga de productos de ejemplo mediante Array
-for (let index = 0; index < 5; index++) {
+for (let index = 0; index < 15; index++) {
   productList.push({
     name: "Bike",
     price: 120,
     image:
       "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  });
-  productList.push({
-    name: "Keyboard",
-    price: 320,
-    image:
-      "https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  });
-  productList.push({
-    name: "Computer",
-    price: 320,
-    image:
-      "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   });
 }
 

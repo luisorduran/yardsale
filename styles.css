@@ -368,17 +368,16 @@ aside {
 
 /* INI FOOTER */
 .footer {
-  align-items: center;
   display: flex;
+  justify-content: space-around;
   width: 100%;
   margin-top: 75px;
+  border-top: 1px solid var(--very-light-pink);
 }
 
-footer section {
+.footer section {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 50%;
 }
 
 .left ul,
@@ -387,6 +386,7 @@ footer section {
   font-weight: 500;
   line-height: 18px;
   list-style: none;
+  width: 100%;
 }
 
 .left li,
@@ -403,12 +403,15 @@ footer section {
   font-size: 14px;
   font-weight: 500;
   line-height: 15px;
+  margin: 0 30px 0 30px;
 }
 
+.f-bottom p {
+  text-align: center;
+}
 .footer a {
   cursor: pointer;
   font-size: 14px;
-  padding-left: 30px;
   text-decoration: none;
 }
 
@@ -441,9 +444,16 @@ footer section {
     width: 140px;
     height: 140px;
   }
+  .desktop-menu {
+    right: 0;
+  }
+  #productDetail {
+    right: 0;
+  }
   .footer {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -456,14 +466,5 @@ footer section {
   }
   #productDetail {
     right: 5px;
-  }
-}
-
-@media (max-width: 768px) {
-  .desktop-menu {
-    right: 0;
-  }
-  #productDetail {
-    right: 0;
   }
 }
