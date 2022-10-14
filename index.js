@@ -19,15 +19,21 @@ productDetailCloseIcon.addEventListener("click", closeProductDetailAside);
 
 //Funciones para mostrar y ocultar paneles
 function toggleDesktopMenu() {
-  if (!aside.classList.contains("inactive")) {
-    aside.classList.add("inactive");
+  if (!shoppingCartContainer.classList.contains("inactive")) {
+    shoppingCartContainer.classList.add("inactive");
+  }
+  if (!productDetailContainer.classList.contains("inactive")) {
+    productDetailContainer.classList.add("inactive");
   }
   desktopMenu.classList.toggle("inactive");
 }
 
 function toggleMobileMenu() {
-  if (!aside.classList.contains("inactive")) {
-    aside.classList.add("inactive");
+  if (!shoppingCartContainer.classList.contains("inactive")) {
+    shoppingCartContainer.classList.add("inactive");
+  }
+  if (!productDetailContainer.classList.contains("inactive")) {
+    productDetailContainer.classList.add("inactive");
   }
   mobileMenu.classList.toggle("inactive");
 }
@@ -39,84 +45,41 @@ function toggleCarMenu() {
   if (!desktopMenu.classList.contains("inactive")) {
     desktopMenu.classList.add("inactive");
   }
-  aside.classList.toggle("inactive");
+  if (!productDetailContainer.classList.contains("inactive")) {
+    productDetailContainer.classList.add("inactive");
+  }
+  shoppingCartContainer.classList.toggle("inactive");
 }
 
+function toggleProductDetailAside() {
+  if (!mobileMenu.classList.contains("inactive")) {
+    mobileMenu.classList.add("inactive");
+  }
+  if (!desktopMenu.classList.contains("inactive")) {
+    desktopMenu.classList.add("inactive");
+  }
+  if (!shoppingCartContainer.classList.contains("inactive")) {
+    shoppingCartContainer.classList.add("inactive");
+  }
+  productDetailContainer.classList.remove("inactive");
+}
+
+function closeProductDetailAside() {
+  productDetailContainer.classList.add("inactive");
+}
+
+
 const productList = [];
-productList.push({
-  name: "Computer",
-  price: 320,
-  image:
-    "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-});
-productList.push({
-  name: "Bike",
-  price: 120,
-  image:
-    "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-});
-productList.push({
-  name: "Keyboard",
-  price: 320,
-  image:
-    "https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-});
-productList.push({
-  name: "Computer",
-  price: 320,
-  image:
-    "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-});
 
-productList.push({
-  name: "Keyboard",
-  price: 320,
-  image:
-    "https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-});
-productList.push({
-  name: "Bike",
-  price: 120,
-  image:
-    "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-});
-productList.push({
-  name: "Computer",
-  price: 320,
-  image:
-    "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-});
-productList.push({
-  name: "Bike",
-  price: 120,
-  image:
-    "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-});
-productList.push({
-  name: "Keyboard",
-  price: 320,
-  image:
-    "https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-});
-productList.push({
-  name: "Computer",
-  price: 320,
-  image:
-    "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-});
-
-productList.push({
-  name: "Keyboard",
-  price: 320,
-  image:
-    "https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-});
-productList.push({
-  name: "Bike",
-  price: 120,
-  image:
-    "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-});
+//Carga de productos de ejemplo mediante Array
+for (let index = 0; index < 15; index++) {
+  productList.push({
+    name: "Bike",
+    price: 120,
+    image:
+      "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  });
+}
 
 //Maquetacion manual de los cards
 function renderProducts(arr) {
@@ -127,6 +90,7 @@ function renderProducts(arr) {
     // product= {name, price, image} -> product.image
     const productImg = document.createElement("img");
     productImg.setAttribute("src", product.image);
+    productImg.addEventListener("click", toggleProductDetailAside);
 
     const productInfo = document.createElement("div");
     productInfo.classList.add("product-info");
